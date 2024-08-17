@@ -344,17 +344,27 @@ Prefix = {
 UserElement1 = "NONE"  #Hydrogen NOT H
 UserElement2 = "NONE"
 
+Element1Type = "NONE"
+Element2Type = "NONE"
+bond = "NONE"
+
+
+#Choosing Charge of Element
+def ChooseCharge():
+    if not(UserElement1 in ElementCharge.values()):
+        any
+
+
 #Matching the number of elements according to their charges
 def MatchElements():
-    while abs(ElementCharge["Fluorine"]) != abs(ElementCharge["Uranium"]):
-        print("The current charge of compound is "+str(ElementCharge["Fluorine"] + ElementCharge["Uranium"])+". Add or remove elements to balance the charges to 0.")
+    while abs(ElementCharge[UserElement1]) != abs(ElementCharge[UserElement2]):
+        print("The current charge of compound is "+str(ElementCharge[UserElement1] + ElementCharge[UserElement2])+". Add or remove elements to balance the charges to 0.")
     
     #show the Go button so user can click it
    
 
 #Testing whether the combination of bond is ionic/covalent/metallic
 def TestBondType():
-    global Element1Type, Element2Type, bond
     if ElementCharge[UserElement1] > 0:
         Element1Type = "metal"
     else: 
